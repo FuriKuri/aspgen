@@ -1,8 +1,0 @@
-dependencies {
-  compile 'org.apache.felix:org.apache.felix.framework:4.0.2'
-}
-
-jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    manifest { attributes 'Main-Class': 'de.hbrs.aspgen.felix.Main' }
-}
