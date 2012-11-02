@@ -1,0 +1,14 @@
+apply plugin: 'osgi'
+
+jar {
+  manifest {
+    version = '0.0.1'
+    instruction 'Private-Package', 'de.hbrs.aspgen.generator.*'
+    instruction 'Export-Package', 'de.hbrs.aspgen.generator.bundle'
+    instruction 'Bundle-Activator', 'de.hbrs.aspgen.generator.Activator'
+  }
+}
+
+dependencies {
+  testCompile project(':aspgen-java')
+}
