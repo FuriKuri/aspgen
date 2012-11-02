@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Aspgen by FuriKuri</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/FuriKuri/aspgen">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/FuriKuri/aspgen/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/FuriKuri/aspgen/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Aspgen</h1>
+          <p>AspectJ Code Generatorsystem for Java</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/FuriKuri">FuriKuri</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>Welcome to AspGen</h2>
+
+<h2>Installation</h2>
+
+<ul>
+<li>Step 1: Unzip the archive to the directory you wish. For example in Windows C:\Program Files\aspgen or in Linux /usr/local/aspgen.</li>
+<li>Step 2: Add the ASPGEN_HOME enviroment variable with the directory you choose the step before.</li>
+<li>Step 3: Add ASPGEN_HOME/bin to the PATH environment variable.</li>
+</ul><h2>Gettings Started</h2>
+
+<ul>
+<li>Step 1: Open your java project in your favorite IDE.</li>
+<li>Step 2: Add all jar files in ASPGEN_HOME/generators and ASPGEN_HOME/exlibs to the classpath.</li>
+<li>Step 3: Start the AspGen generator system with in the project directory with</li>
+</ul><pre><code>  D:\workspace\my-java-project [master]&gt; aspgen
+</code></pre>
+
+<ul>
+<li>Step 4: Add a generator annotation (i.e @ToString) to a java class.</li>
+</ul><pre><code>@ToString
+public class Person {
+    private String name;
+    private int age;
+}
+</code></pre>
+
+<ul>
+<li>Step 5: After saving the java file aspgen will generate an aspectJ file with the ToString method.</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
