@@ -4,6 +4,7 @@
 - Step 1: Unzip the archive to the directory you wish. For example in Windows C:\Program Files\aspgen or in Linux /usr/local/aspgen.
 - Step 2: Add the ASPGEN_HOME enviroment variable with the directory you choose the step before.
 - Step 3: Add ASPGEN_HOME/bin to the PATH environment variable.
+- Step 4: For Linux users. Make sure ASPGEN_HOME/bin/aspgen is executable (chmod +x ASPGEN_HOME/bin/aspgen). 
 
 ## Gettings Started
 - Step 1: Open your java project in your favorite IDE.
