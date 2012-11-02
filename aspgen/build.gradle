@@ -1,0 +1,76 @@
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	
+	sourceCompatibility = 1.7
+	version = '0.0.1'
+	group = 'de.hbrs'
+	
+	repositories {
+	  mavenCentral()
+	}
+    
+    test {
+        afterSuite { description, result ->
+            if (description.getClassName() != null) {
+                logger.lifecycle(description.getClassName().replaceAll("([^.]+\\.)+", "") + " -> "
+                    + "Tests: " + result.getTestCount() + ", Success: " + result.getSuccessfulTestCount() 
+                    + ", Failed: " + result.getFailedTestCount() 
+                    + ", Skipped: " + result.getSkippedTestCount() 
+                    + " in " + (result.getEndTime() - result.getStartTime()) + " ms")
+            }
+        }
+    }
+        
+	dependencies {
+      compile 'org.apache.felix:org.apache.felix.main:4.0.2'
+	  compile ('org.apache.felix:org.apache.felix.log:1.0.1') {
+          exclude group: 'org.osgi'
+      }
+      compile ('org.apache.felix:org.apache.felix.gogo.runtime:0.10.0') 
+	  compile 'commons-io:commons-io:2.1'
+	  compile 'com.google.inject:guice:3.0'
+
+	  testCompile 'junit:junit:4.10'
+	  testCompile 'org.mockito:mockito-all:1.9.0'
+      if (project.name != 'aspgen-test-helper' && project.name != 'aspgen-api') {
+          compile project(':aspgen-test-helper')
+      }
+      if (project.name != 'aspgen-api') {
+          compile project(':aspgen-api')
+      }
+	}
+	
+	task copyBundles(type:Copy) {
+	  from('build/libs/') {
+	    include '*.jar'
+	    exclude '*test*'
+        exclude '*felix*'
+        exclude 'gen*'
+	  }
+	  
+	  into '../bundles'
+	}
+	
+	task copyFelixRunner(type:Copy) {
+	  from('build/libs/') {
+	    include '*felix*.jar'
+	  }
+	  
+	  into '../bin'
+	}
+    
+    
+    task copyGenerators(type:Copy) {
+        from('build/libs/') {
+          include '*.jar'
+          exclude '*test*'
+          exclude 'aspgen*'
+          exclude '*felix*'
+        }
+        
+        into '../generators'
+      }
+    
+    task dist(dependsOn: [build, copyBundles, copyGenerators, copyFelixRunner])
+}

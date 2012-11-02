@@ -1,0 +1,16 @@
+apply plugin: 'osgi'
+
+jar {
+  manifest {
+    version = '0.0.1'
+    instruction 'Export-Package', ''
+    instruction 'Private-Package', 'de.hbrs.aspgen.generator.dao'
+    instruction 'Bundle-Activator', 'de.hbrs.aspgen.generator.dao.DaoGeneratorActivator'
+  }
+}
+
+dependencies {
+  compile project(':aspgen-core')
+  compile project(':aspgen-annotation')
+
+}

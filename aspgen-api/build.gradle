@@ -1,0 +1,8 @@
+apply plugin: 'osgi'
+
+jar {
+  manifest {
+    version = '0.0.1'
+    instruction 'Export-Package', 'de.hbrs.aspgen.api.*'
+  }
+}
