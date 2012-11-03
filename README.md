@@ -1,6 +1,6 @@
 ## Welcome to AspGen
 
-[![Build Status](https://travis-ci.org/furikuri/aspgen.png)](https://travis-ci.org/furikuri/aspgen)
+[![Build Status](https://travis-ci.org/FuriKuri/aspgen.png)](https://travis-ci.org/FuriKuri/aspgen)
 
 ## Installation
 - Step 1: Unzip the archive to the directory you wish. For example in Windows C:\Program Files\aspgen or in Linux /usr/local/aspgen.
