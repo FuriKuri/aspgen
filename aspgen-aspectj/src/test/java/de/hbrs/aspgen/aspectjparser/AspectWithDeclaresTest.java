@@ -30,7 +30,7 @@ public class AspectWithDeclaresTest {
 
     @Test
     public void getPosition() {
-        assertEquals(65, fileAspect.getDeclares().get(0).getStartPosition());
-        assertEquals(164, fileAspect.getDeclares().get(0).getEndPosition());
+        assertEquals(61, fileAspect.getDeclares().get(0).getStartPosition());
+        assertEquals(159, fileAspect.getDeclares().get(0).getEndPosition());
     }
 }

@@ -16,7 +16,7 @@ public class AspectToGetNextWritePositionTest {
     @Test
     public void getGeneratedBlockPosition() {
         fileAspect = parser.parse(new File("src/test/resources/AspectWithAdvices.aj"));
-        assertEquals(1387, fileAspect.getNextBlockPositionToWrite());
+        assertEquals(1346, fileAspect.getNextBlockPositionToWrite());
     }
 
     @Test
@@ -28,6 +28,6 @@ public class AspectToGetNextWritePositionTest {
     @Test
     public void getBlockPositionInAspectWithNoGeneratedBlocks() {
         fileAspect = parser.parse(new File("src/test/resources/AspectWithNoGeneratedBlocks.aj"));
-        assertEquals(711, fileAspect.getNextBlockPositionToWrite());
+        assertEquals(686, fileAspect.getNextBlockPositionToWrite());
     }
 }

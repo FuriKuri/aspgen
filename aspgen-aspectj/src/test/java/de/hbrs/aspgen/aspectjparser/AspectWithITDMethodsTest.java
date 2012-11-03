@@ -24,15 +24,15 @@ public class AspectWithITDMethodsTest {
     @Test
     public void getJavaDoc() {
         assertEquals("", fileAspect.getItdMethods().get(0).getJavaDoc().getContent());
-        assertEquals("/**\r\n     * Das ist ein Test String\r\n     */\r\n    ", fileAspect.getItdMethods().get(2).getJavaDoc().getContent());
+        assertEquals("/**\n     * Das ist ein Test String\n     */\n    ", fileAspect.getItdMethods().get(2).getJavaDoc().getContent());
     }
 
     @Test
     public void getAnnotation() {
-        assertEquals("@Generated(12345)\r\n    ", fileAspect.getItdMethods().get(0).getAnnotations().getContent());
-        assertEquals("@Generated(\"mappingId\")\r\n    ", fileAspect.getItdMethods().get(1).getAnnotations().getContent());
-        assertEquals("@Generated(12345)\r\n    @Des\r\n    ", fileAspect.getItdMethods().get(2).getAnnotations().getContent());
-        assertEquals("@Generated(\"mappingId\")\r\n    @MyAnno(value=\"123\", id=123)\r\n    ", fileAspect.getItdMethods().get(3).getAnnotations().getContent());
+        assertEquals("@Generated(12345)\n    ", fileAspect.getItdMethods().get(0).getAnnotations().getContent());
+        assertEquals("@Generated(\"mappingId\")\n    ", fileAspect.getItdMethods().get(1).getAnnotations().getContent());
+        assertEquals("@Generated(12345)\n    @Des\n    ", fileAspect.getItdMethods().get(2).getAnnotations().getContent());
+        assertEquals("@Generated(\"mappingId\")\n    @MyAnno(value=\"123\", id=123)\n    ", fileAspect.getItdMethods().get(3).getAnnotations().getContent());
     }
 
     @Test
@@ -69,18 +69,18 @@ public class AspectWithITDMethodsTest {
 
     @Test
     public void getBlock() {
-        assertEquals("{\r\n        System.out.println(\"Output\");\r\n    }", fileAspect.getItdMethods().get(0).getBlock().getContent());
-        assertEquals("{\r\n        return \"returnValue\";\r\n    }", fileAspect.getItdMethods().get(1).getBlock().getContent());
-        assertEquals("{\r\n        return 1000.0;\r\n    }", fileAspect.getItdMethods().get(2).getBlock().getContent());
-        assertEquals("{\r\n        return \"returnValue\";\r\n    }", fileAspect.getItdMethods().get(3).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Output\");\n    }", fileAspect.getItdMethods().get(0).getBlock().getContent());
+        assertEquals("{\n        return \"returnValue\";\n    }", fileAspect.getItdMethods().get(1).getBlock().getContent());
+        assertEquals("{\n        return 1000.0;\n    }", fileAspect.getItdMethods().get(2).getBlock().getContent());
+        assertEquals("{\n        return \"returnValue\";\n    }", fileAspect.getItdMethods().get(3).getBlock().getContent());
     }
 
     @Test
     public void getPosition() {
-        assertEquals(63, fileAspect.getItdMethods().get(0).getStartPosition());
-        assertEquals(164, fileAspect.getItdMethods().get(0).getEndPosition());
+        assertEquals(60, fileAspect.getItdMethods().get(0).getStartPosition());
+        assertEquals(158, fileAspect.getItdMethods().get(0).getEndPosition());
 
-        assertEquals(176, fileAspect.getItdMethods().get(1).getStartPosition());
-        assertEquals(271, fileAspect.getItdMethods().get(1).getEndPosition());
+        assertEquals(168, fileAspect.getItdMethods().get(1).getStartPosition());
+        assertEquals(260, fileAspect.getItdMethods().get(1).getEndPosition());
     }
 }

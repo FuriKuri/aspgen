@@ -20,7 +20,7 @@ public class AspectWithAdvicesTest {
 
     @Test
     public void getJavaDoc() {
-        assertEquals("/**\r\n     * My JavaDoc\r\n     */\r\n    ", fileAspect.getAdvices().get(0).getJavaDoc().getContent());
+        assertEquals("/**\n     * My JavaDoc\n     */\n    ", fileAspect.getAdvices().get(0).getJavaDoc().getContent());
         assertEquals("", fileAspect.getAdvices().get(2).getJavaDoc().getContent());
     }
 
@@ -32,11 +32,11 @@ public class AspectWithAdvicesTest {
 
     @Test
     public void getAdviceHead() {
-        assertEquals("\r\n    after(String value, int number) throws IOException : ", fileAspect.getAdvices().get(0).getAdviceHead().getContent());
-        assertEquals("\r\n    after() : ", fileAspect.getAdvices().get(1).getAdviceHead().getContent());
-        assertEquals("\r\n    before(String value, int number) throws IOException : ", fileAspect.getAdvices().get(2).getAdviceHead().getContent());
-        assertEquals("\r\n    void around(String value, int number) throws IOException : ", fileAspect.getAdvices().get(3).getAdviceHead().getContent());
-        assertEquals("\r\n    String around(String value) : ", fileAspect.getAdvices().get(4).getAdviceHead().getContent());
+        assertEquals("\n    after(String value, int number) throws IOException : ", fileAspect.getAdvices().get(0).getAdviceHead().getContent());
+        assertEquals("\n    after() : ", fileAspect.getAdvices().get(1).getAdviceHead().getContent());
+        assertEquals("\n    before(String value, int number) throws IOException : ", fileAspect.getAdvices().get(2).getAdviceHead().getContent());
+        assertEquals("\n    void around(String value, int number) throws IOException : ", fileAspect.getAdvices().get(3).getAdviceHead().getContent());
+        assertEquals("\n    String around(String value) : ", fileAspect.getAdvices().get(4).getAdviceHead().getContent());
 
     }
 
@@ -51,16 +51,16 @@ public class AspectWithAdvicesTest {
 
     @Test
     public void getBlock() {
-        assertEquals("{\r\n        System.out.println(\"Execute doMethod\");\r\n    }", fileAspect.getAdvices().get(0).getBlock().getContent());
-        assertEquals("{\r\n        System.out.println(\"Execute doMethod\");\r\n        return \"\";\r\n    }", fileAspect.getAdvices().get(4).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Execute doMethod\");\n    }", fileAspect.getAdvices().get(0).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Execute doMethod\");\n        return \"\";\n    }", fileAspect.getAdvices().get(4).getBlock().getContent());
     }
 
     @Test
     public void getPosition() {
-        assertEquals(294, fileAspect.getAdvices().get(0).getStartPosition());
-        assertEquals(550, fileAspect.getAdvices().get(0).getEndPosition());
+        assertEquals(280, fileAspect.getAdvices().get(0).getStartPosition());
+        assertEquals(530, fileAspect.getAdvices().get(0).getEndPosition());
 
-        assertEquals(562, fileAspect.getAdvices().get(1).getStartPosition());
-        assertEquals(696, fileAspect.getAdvices().get(1).getEndPosition());
+        assertEquals(540, fileAspect.getAdvices().get(1).getStartPosition());
+        assertEquals(671, fileAspect.getAdvices().get(1).getEndPosition());
     }
 }

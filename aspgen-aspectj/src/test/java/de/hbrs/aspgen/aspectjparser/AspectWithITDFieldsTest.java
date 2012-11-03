@@ -23,16 +23,16 @@ public class AspectWithITDFieldsTest {
 
     @Test
     public void getJavaDoc() {
-        assertEquals("/**\r\n     * My JavaDoc\r\n     */\r\n    ", fileAspect.getItdFields().get(0).getJavaDoc().getContent());
+        assertEquals("/**\n     * My JavaDoc\n     */\n    ", fileAspect.getItdFields().get(0).getJavaDoc().getContent());
         assertEquals("", fileAspect.getItdFields().get(2).getJavaDoc().getContent());
     }
 
     @Test
     public void getAnnotation() {
-        assertEquals("@Generated(1234)\r\n    ", fileAspect.getItdFields().get(0).getAnnotations().getContent());
-        assertEquals("@Generated(\"mappingId\")\r\n    ", fileAspect.getItdFields().get(1).getAnnotations().getContent());
-        assertEquals("@Generated(\"1234\")\r\n    @MyAnno\r\n    ", fileAspect.getItdFields().get(2).getAnnotations().getContent());
-        assertEquals("@Generated(\"1234\")\r\n    ", fileAspect.getItdFields().get(3).getAnnotations().getContent());
+        assertEquals("@Generated(1234)\n    ", fileAspect.getItdFields().get(0).getAnnotations().getContent());
+        assertEquals("@Generated(\"mappingId\")\n    ", fileAspect.getItdFields().get(1).getAnnotations().getContent());
+        assertEquals("@Generated(\"1234\")\n    @MyAnno\n    ", fileAspect.getItdFields().get(2).getAnnotations().getContent());
+        assertEquals("@Generated(\"1234\")\n    ", fileAspect.getItdFields().get(3).getAnnotations().getContent());
     }
 
     @Test
@@ -70,10 +70,10 @@ public class AspectWithITDFieldsTest {
 
     @Test
     public void getPosition() {
-        assertEquals(294, fileAspect.getItdFields().get(0).getStartPosition());
-        assertEquals(385, fileAspect.getItdFields().get(0).getEndPosition());
+        assertEquals(280, fileAspect.getItdFields().get(0).getStartPosition());
+        assertEquals(367, fileAspect.getItdFields().get(0).getEndPosition());
 
-        assertEquals(391, fileAspect.getItdFields().get(1).getStartPosition());
-        assertEquals(464, fileAspect.getItdFields().get(1).getEndPosition());
+        assertEquals(372, fileAspect.getItdFields().get(1).getStartPosition());
+        assertEquals(444, fileAspect.getItdFields().get(1).getEndPosition());
     }
 }

@@ -24,14 +24,14 @@ public class AspectWithITDConstructorTest {
     @Test
     public void getJavaDoc() {
         assertEquals("", fileAspect.getItdConstructors().get(0).getJavaDoc().getContent());
-        assertEquals("/**\r\n     * Das ist ein Test String\r\n     */\r\n    ", fileAspect.getItdConstructors().get(2).getJavaDoc().getContent());
+        assertEquals("/**\n     * Das ist ein Test String\n     */\n    ", fileAspect.getItdConstructors().get(2).getJavaDoc().getContent());
     }
 
     @Test
     public void getAnnotation() {
-        assertEquals("@Generated(12345)\r\n    ", fileAspect.getItdConstructors().get(0).getAnnotations().getContent());
-        assertEquals("@Generated(\"mappingId\")\r\n    ", fileAspect.getItdConstructors().get(1).getAnnotations().getContent());
-        assertEquals("@Generated(12345)\r\n    @Des\r\n    ", fileAspect.getItdConstructors().get(2).getAnnotations().getContent());
+        assertEquals("@Generated(12345)\n    ", fileAspect.getItdConstructors().get(0).getAnnotations().getContent());
+        assertEquals("@Generated(\"mappingId\")\n    ", fileAspect.getItdConstructors().get(1).getAnnotations().getContent());
+        assertEquals("@Generated(12345)\n    @Des\n    ", fileAspect.getItdConstructors().get(2).getAnnotations().getContent());
     }
 
     @Test
@@ -56,17 +56,17 @@ public class AspectWithITDConstructorTest {
 
     @Test
     public void getBlock() {
-        assertEquals("{\r\n        System.out.println(\"Output\");\r\n    }", fileAspect.getItdConstructors().get(0).getBlock().getContent());
-        assertEquals("{\r\n        System.out.println(\"Output\");\r\n    }", fileAspect.getItdConstructors().get(1).getBlock().getContent());
-        assertEquals("{\r\n        System.out.println(\"Output\");\r\n    }", fileAspect.getItdConstructors().get(2).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Output\");\n    }", fileAspect.getItdConstructors().get(0).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Output\");\n    }", fileAspect.getItdConstructors().get(1).getBlock().getContent());
+        assertEquals("{\n        System.out.println(\"Output\");\n    }", fileAspect.getItdConstructors().get(2).getBlock().getContent());
     }
 
     @Test
     public void getPosition() {
-        assertEquals(63, fileAspect.getItdConstructors().get(0).getStartPosition());
-        assertEquals(156, fileAspect.getItdConstructors().get(0).getEndPosition());
+        assertEquals(60, fileAspect.getItdConstructors().get(0).getStartPosition());
+        assertEquals(150, fileAspect.getItdConstructors().get(0).getEndPosition());
 
-        assertEquals(168, fileAspect.getItdConstructors().get(1).getStartPosition());
-        assertEquals(260, fileAspect.getItdConstructors().get(1).getEndPosition());
+        assertEquals(160, fileAspect.getItdConstructors().get(1).getStartPosition());
+        assertEquals(249, fileAspect.getItdConstructors().get(1).getEndPosition());
     }
 }
