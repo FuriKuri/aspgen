@@ -12,13 +12,13 @@ subprojects {
         
 	dependencies {
       compile 'org.apache.felix:org.apache.felix.main:4.0.2'
-	  compile ('org.apache.felix:org.apache.felix.log:1.0.1') {
-          exclude group: 'org.osgi'
-      }
       compile 'org.apache.felix:org.apache.felix.gogo.runtime:0.10.0'
 	  compile 'commons-io:commons-io:2.1'
 	  compile 'com.google.inject:guice:3.0'
-
+	  compile ('org.apache.felix:org.apache.felix.log:1.0.1') {
+          exclude group: 'org.osgi'
+      }
+      
 	  testCompile 'junit:junit:4.10'
 	  testCompile 'org.mockito:mockito-all:1.9.0'
       if (project.name != 'aspgen-test-helper' && project.name != 'aspgen-api') {
