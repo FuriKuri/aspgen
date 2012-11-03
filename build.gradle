@@ -9,19 +9,7 @@ subprojects {
 	repositories {
 	  mavenCentral()
 	}
-    
-    test {
-        afterSuite { description, result ->
-            if (description.getClassName() != null) {
-                logger.lifecycle(description.getClassName().replaceAll("([^.]+\\.)+", "") + " -> "
-                    + "Tests: " + result.getTestCount() + ", Success: " + result.getSuccessfulTestCount() 
-                    + ", Failed: " + result.getFailedTestCount() 
-                    + ", Skipped: " + result.getSkippedTestCount() 
-                    + " in " + (result.getEndTime() - result.getStartTime()) + " ms")
-            }
-        }
-    }
-        
+     
 	dependencies {
       compile 'org.apache.felix:org.apache.felix.main:4.0.2'
 	  compile ('org.apache.felix:org.apache.felix.log:1.0.1') {
